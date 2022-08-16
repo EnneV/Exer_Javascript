@@ -13,6 +13,7 @@ d. Se o delta for positivo, a equação possui duas raiz reais; informe-as ao
 usuário;
 */
 
+
 let a_fixo = prompt("Digite um número para A:");
 a_fixo = parseInt(a_fixo);
 
@@ -29,7 +30,8 @@ b_fixo = parseInt(b_fixo);
 let c_fixo = prompt("Digite um número para C:");
 c_fixo = parseInt(c_fixo);
 
-let x_variavel;
+let x_raiz1;
+let x_raiz2;
 
 
 let delta = b_fixo ** 2 - 4 * a_fixo * c_fixo;
@@ -40,7 +42,22 @@ if(delta < 0 ){
 
 } else if (delta == 0){
 
-x_variavel = (-1 * b_fixo) / 2 * a_fixo;
-alert (x_variavel);
+x_raiz1 = (-1 * b_fixo) / 2 * a_fixo;
+
+alert ("Essa equação possui um delta igual 0 e apenas uma raiz real. Raiz: " + x_raiz1);
+
+} else if (delta > 0) {
+  
+  let raiz_delta = Math.sqrt(delta);
+
+  x_raiz1 = ((-1 * b_fixo) + raiz_delta) / (2 * a_fixo);
+
+  x_raiz2 = ((-1 * b_fixo) - raiz_delta) / (2 * a_fixo);
+
+
+  alert ("Essa equação possui um delta maior que 0 e duas raizes reais. \n Raiz 1: " + x_raiz1 + "\n Raiz 2: " + x_raiz2);
+  
+ 
+
 
 }
